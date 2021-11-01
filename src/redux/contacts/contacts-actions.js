@@ -1,24 +1,18 @@
 import { nanoid } from 'nanoid';
-import types from './contacts-types';
+import { createAction } from '@reduxjs/toolkit';
 
-const addContact = (name, number) => ({
-  type: types.ADD,
+const addContact = createAction('contacts/add', (name, number) => ({
   payload: {
     id: nanoid(),
     name,
     number,
   },
-});
+}));
 
-const deleteContact = id => ({
-  type: types.DELETE,
-  payload: id,
-});
+const deleteContact = createAction('contacts/delete');
 
-const changeFilter = value => ({
-  type: types.CHANGE_FILTER,
-  payload: value,
-});
+const changeFilter = createAction('contacts/changeFilter');
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { addContact, deleteContact, changeFilter };
+const contactsActions = { addContact, deleteContact, changeFilter };
+
+export default contactsActions;
