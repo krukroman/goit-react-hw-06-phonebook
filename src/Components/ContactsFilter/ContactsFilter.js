@@ -3,7 +3,7 @@ import contactsActions from 'redux/contacts/contacts-actions';
 import PropTypes from 'prop-types';
 import s from './ContactsFilter.module.scss';
 
-function Filter({ value, onChange }) {
+function Filter({ value, onChange, contactsCount }) {
   return (
     <div className={s.container}>
       <label className={s.label}>
@@ -13,6 +13,7 @@ function Filter({ value, onChange }) {
           type="text"
           value={value}
           onChange={onChange}
+          placeholder={`Contacts: ${contactsCount}`}
         />
       </label>
     </div>
@@ -25,6 +26,7 @@ Filter.propTypes = {
 
 const mapStateToProps = state => ({
   value: state.contacts.filter,
+  contactsCount: state.contacts.items.length,
 });
 
 const mapDispatchToProps = dispatch => ({

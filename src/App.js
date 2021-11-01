@@ -1,13 +1,5 @@
-import ContactsEditor from 'components/ContactsEditor';
-import ContactsList from 'components/ContactsList';
-import ContactsFilter from 'components/ContactsFilter';
+import PhonebookView from 'views/PhonebookView';
 
 export default function App() {
-  return (
-    <div>
-      <ContactsEditor />
-      <ContactsFilter />
-      <ContactsList />
-    </div>
-  );
+  return <PhonebookView />;
 }
