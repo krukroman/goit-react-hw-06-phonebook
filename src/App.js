@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import useLocalStorage from './Components/hooks/useLocalStorage';
 import { nanoid } from 'nanoid';
-import ContactsEditor from './Components/ContactsEditor';
-import ContactsList from './Components/ContactsList';
-import ContactsFilter from './Components/ContactsFilter';
+import useLocalStorage from 'Components/hooks/useLocalStorage';
+import ContactsEditor from 'Components/ContactsEditor';
+import ContactsList from 'Components/ContactsList';
+import ContactsFilter from 'Components/ContactsFilter';
 
 export default function App() {
   const [contacts, setContacts] = useLocalStorage('contacts', []);
