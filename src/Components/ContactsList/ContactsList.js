@@ -1,9 +1,12 @@
+import { connect } from 'react-redux';
+import contactsActions from 'redux/contacts/contacts-actions';
+import getVisibleContacts from 'components/functions/getVisibleContacts';
 import Contact from '../Contact';
 import PropTypes from 'prop-types';
 
 import s from './ContactsList.module.scss';
 
-export default function ContactsList({ contacts, onDeleteContact }) {
+function ContactsList({ contacts, onDeleteContact }) {
   return (
     <div className={s.container}>
       <h2 className={s.title}>Contacts</h2>
@@ -41,3 +44,13 @@ ContactsList.propTypes = {
   ).isRequired,
   onDeleteContact: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = ({ contacts: { items, filter } }) => ({
+  contacts: getVisibleContacts(items, filter),
+});
+
+const mapDispatchToProps = dispatch => ({
+  onDeleteContact: id => dispatch(contactsActions.deleteContact(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);

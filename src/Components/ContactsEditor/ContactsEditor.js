@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import { connect } from 'react-redux';
+import contactsActions from 'redux/contacts/contacts-actions';
 import PropTypes from 'prop-types';
 
 import s from './ContactsEditor.module.scss';
 
-export default function ContactsEditor({ onSubmit }) {
+function ContactsEditor({ onSubmit }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -74,3 +76,10 @@ export default function ContactsEditor({ onSubmit }) {
 ContactsEditor.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
+
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (name, number) =>
+    dispatch(contactsActions.addContact(name, number)),
+});
+
+export default connect(null, mapDispatchToProps)(ContactsEditor);
