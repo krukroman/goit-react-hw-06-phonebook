@@ -30,8 +30,8 @@ p {
 
 ul,
 ol {
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -42,9 +42,9 @@ textarea {
 
 button {
   display: flex;
-  margin: 0;
   padding: 0;
-  cursor: pointer;
-  background-color: transparent;
   border: none;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
