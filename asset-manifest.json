@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/krukroman/goit-react-hw-06-phonebook/static/css/main.d97ae707.chunk.css",
+    "main.js": "/krukroman/goit-react-hw-06-phonebook/static/js/main.b7c68e94.chunk.js",
+    "main.js.map": "/krukroman/goit-react-hw-06-phonebook/static/js/main.b7c68e94.chunk.js.map",
+    "runtime-main.js": "/krukroman/goit-react-hw-06-phonebook/static/js/runtime-main.b314e533.js",
+    "runtime-main.js.map": "/krukroman/goit-react-hw-06-phonebook/static/js/runtime-main.b314e533.js.map",
+    "static/js/2.bf5be560.chunk.js": "/krukroman/goit-react-hw-06-phonebook/static/js/2.bf5be560.chunk.js",
+    "static/js/2.bf5be560.chunk.js.map": "/krukroman/goit-react-hw-06-phonebook/static/js/2.bf5be560.chunk.js.map",
+    "index.html": "/krukroman/goit-react-hw-06-phonebook/index.html",
+    "static/css/main.d97ae707.chunk.css.map": "/krukroman/goit-react-hw-06-phonebook/static/css/main.d97ae707.chunk.css.map",
+    "static/js/2.bf5be560.chunk.js.LICENSE.txt": "/krukroman/goit-react-hw-06-phonebook/static/js/2.bf5be560.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b314e533.js",
+    "static/js/2.bf5be560.chunk.js",
+    "static/css/main.d97ae707.chunk.css",
+    "static/js/main.b7c68e94.chunk.js"
+  ]
+}
