@@ -7,7 +7,7 @@ import isContactExist from 'components/functions/isContactExists';
 const items = createReducer([], {
   [contactsActions.addContact]: (state, { payload }) => {
     if (isContactExist(state, payload.name)) {
-      alert('exists');
+      alert(`Contact with ${payload.name} allready exists`);
       return;
     }
     return [...state, payload];

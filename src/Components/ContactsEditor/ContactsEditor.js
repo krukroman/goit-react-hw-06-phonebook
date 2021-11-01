@@ -1,14 +1,14 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { connect } from 'react-redux';
 import contactsActions from 'redux/contacts/contacts-actions';
-import PropTypes from 'prop-types';
 
 import s from './ContactsEditor.module.scss';
 
-function ContactsEditor({ onSubmit }) {
+export default function ContactsEditor() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const dispatch = useDispatch();
 
   const inputNameId = nanoid();
   const inputNumberId = nanoid();
@@ -29,7 +29,7 @@ function ContactsEditor({ onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(name, number);
+    dispatch(contactsActions.addContact(name, number));
     setName('');
     setNumber('');
   };
@@ -72,14 +72,3 @@ function ContactsEditor({ onSubmit }) {
     </div>
   );
 }
-
-ContactsEditor.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = dispatch => ({
-  onSubmit: (name, number) =>
-    dispatch(contactsActions.addContact(name, number)),
-});
-
-export default connect(null, mapDispatchToProps)(ContactsEditor);
