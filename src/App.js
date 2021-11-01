@@ -53,13 +53,13 @@ export default function App() {
   };
 
   return (
-    <div>
+    <>
       <ContactsEditor onSubmit={addContact} />
       <ContactsFilter value={filter} onChange={changeFilter} />
       <ContactsList
         contacts={getVisibleContacts()}
         onDeleteContact={removeContact}
       />
-    </div>
+    </>
   );
 }
